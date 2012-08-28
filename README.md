@@ -11,4 +11,5 @@ It requires
 In order to scan the network run manually/set a cron to run
 
 $ php ./symfony scannetwork 10.0.0.0/8 # replace this with your net mask
+
 $ php ./symfony scannetwork 10.0.0.10-100 # replace this with your ip address range
