@@ -1,0 +1,21 @@
+computer:
+  actAs: { Timestampable: ~ }
+  columns:
+    ip: { type: string(20), unique: true }
+    mac: { type: string(20), unique: true }
+    name: { type: string(80), unique: true }
+  
+user: 
+  actAs: { Timestampable: ~ }
+  columns: 
+    login: { type: string(80), unique: true }
+    isAdmin: { type: bool, default: 0 }
+log:
+  actAs: { Timestampable: ~ }
+  columns:
+    computerId: { type:bigint }
+    username: { type:string(255) }
+    success: { type: bool, default: 1 }
+  relations:
+    computer:
+      local: computerId
