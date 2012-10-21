@@ -15,8 +15,13 @@
         <div class="container">
             <a class="brand" href="<?php echo url_for('@homepage')?>">Power Management</a>
             <ul class="nav">
-                <li><a href="<?php echo url_for('computer/new');?>">Add computer</a></li>
-                <li><a href="<?php echo url_for('sf_guard_signout');?>">Logout</a></li>
+                <li><a href="<?php echo url_for('@homepage');?>">Home</a></li>
+                <?php if ($sf_user->hasCredential('admin')): ?>
+                    <li><a href="<?php echo url_for('computer/new');?>">Add computer</a></li>
+                <?php endif; ?>
+                <?php if ($sf_user->isAuthenticated()): ?>
+                    <li><a href="<?php echo url_for('sf_guard_signout');?>">Logout</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

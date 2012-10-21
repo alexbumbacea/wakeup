@@ -15,15 +15,16 @@ class computerForm extends BasecomputerForm
         $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
             'choices' => $this->getObject()->getAvailableComputerTypes(),
         ));
-
+        $ipRegex = computer::IP_REGEX;
         $this->validatorSchema['ip'] = new sfValidatorRegex(array(
-            'pattern' => "/^{computer::IP_REGEX}$/",
+            'pattern' => "/^{$ipRegex}$/",
             'required' => true,
         ), array(
             'invalid' => 'Please provide a valid IP address!',
         ));
+        $macRegex = computer::MAC_REGEX;
         $this->validatorSchema['mac'] = new sfValidatorRegex(array(
-            'pattern' => "/^{computer::MAC_REGEX}$/",
+            'pattern' => "/^{$macRegex}$/",
             'required' => true,
         ), array(
             'invalid' => 'Please provide a valid MAC address!',
