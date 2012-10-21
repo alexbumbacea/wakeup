@@ -85,7 +85,7 @@ class computerActions extends sfActions
     {
         /* @var $computer computer */
         $computer = Doctrine_Core::getTable('computer')->find(array($request->getParameter('id')));
-
+        $this->forward404Unless($computer);
         $log = new log();
         $log->setComputer($computer);
         $log->setUsername($this->getUser()->getUsername());
@@ -108,6 +108,7 @@ class computerActions extends sfActions
     {
         /* @var $computer computer */
         $computer = Doctrine_Core::getTable('computer')->find(array($request->getParameter('id')));
+        $this->forward404Unless($computer);
         if ($computer->verityStatus()) {
             $this->getUser()->setFlash('info', 'Computer is awake!');
         } else {

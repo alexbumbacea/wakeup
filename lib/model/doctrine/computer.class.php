@@ -65,6 +65,8 @@ class computer extends Basecomputer
     }
 
     public function wakeUp() {
+        //don't send wake signal if host already up
+        if ($this->verityStatus()) return true;
         $broadcast = '255.255.255.255';
         $mac_array = explode(':', $this->getMac());
 
