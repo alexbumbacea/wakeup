@@ -2,9 +2,9 @@
     <thead>
     <tr>
         <th>Name</th>
-        <th class="visible-desktop">Type</th>
+        <th class="hidden-phone hidden-tablet">Type</th>
         <th>IP</th>
-        <th class="visible-desktop">MAC</th>
+        <th class="hidden-phone hidden-tablet">MAC</th>
         <th colspan="2">Actions</th>
     </tr>
     </thead>
@@ -15,9 +15,9 @@
         <td>
             <a href="<?php echo url_for('computer/show?id=' . $computer->getId()) ?>"><?php echo $computer->getName() ?></a>
         </td>
-        <td class="visible-desktop"><?php echo $computer->getTypeLabel() ?></td>
+        <td class="hidden-phone hidden-tablet"><?php echo $computer->getTypeLabel() ?></td>
         <td><?php echo $computer->getIp() ?></td>
-        <td class="visible-desktop"><?php echo $computer->getMac() ?></td>
+        <td class="hidden-phone hidden-tablet"><?php echo $computer->getMac() ?></td>
         <td><?php echo button_to('Wake me up!', 'computer/wakeup?id=' . $computer->getId(), array('class' => 'btn btn-primary'))?></td>
         <td>
             <?php echo button_to('Check computer', 'computer/remote?id=' . $computer->getId(), array('class' => 'btn'))?>
