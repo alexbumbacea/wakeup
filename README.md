@@ -4,9 +4,15 @@ wakeup
 Wake on lan interface with autodiscovery
 
 It requires
-   * http auth to be enabled ( for easy integration with Active Directory and other login platforms)
    * nbtscan to be installed for automatic discovery
 
+Setup new instance:
+
+    php symfony configure:database "mysql:host=localhost;dbname=wakeup" userwakeup passwakeup
+    php symfony plugin:install sfDoctrineGuardPlugin
+    php symfony doctrine:build --all --no-confirmation --and-load
+
+Default username/password is : admin/admin
 
 In order to scan the network run manually/set a cron to run
 

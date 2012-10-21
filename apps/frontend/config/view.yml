@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [jquery.dataTables.css,blueprint/screen.css,main.css]
+  stylesheets:    [jquery.dataTables.css,bootstrap-responsive.min.css,bootstrap.min.css,main.css]
 
-  javascripts:    [jquery.js,jquery.dataTables.min.js,global.js]
+  javascripts:    [jquery.js,jquery.dataTables.min.js,bootstrap.min.js,global.js]
 
   has_layout:     true
   layout:         layout

@@ -12,4 +12,54 @@
  */
 class computer extends Basecomputer
 {
+    const TYPE_WINDOWS = 0;
+    const TYPE_LINUX = 1;
+    const TYPE_WEBSERVER = 2;
+    const TYPE_OTHER = 3;
+
+    private $_types = array(
+        0 => 'Windows',
+        1 => 'Linux',
+        2 => 'Web server',
+        3 => 'Other',
+    );
+
+    public function verityStatus() {
+        switch ($this->getType()) {
+            case self::TYPE_WINDOWS:
+                return $this->verifyByRdp();
+            case self::TYPE_LINUX:
+                return $this->verifyBySsh();
+            case self::TYPE_WEBSERVER:
+                return $this->verifyByHttp();
+            case self::TYPE_OTHER:
+                return $this->verifyByPing();
+        }
+    }
+
+    protected function verifyByPort($port){
+        $timeout = "10";
+        return @fsockopen($this->getIp(), $port, $errno, $errstr, $timeout);
+    }
+    protected function verifyByRdp() {
+        return $this->verifyByPort(3389);
+    }
+    protected function verifyBySsh() {
+        return $this->verifyByPort(22);
+    }
+    protected function verifyByHttp() {
+        return $this->verifyByPort(80);
+    }
+    protected function verifyByPing() {
+        throw new Exception('Not implemented');
+    }
+
+    public function getAvailableComputerTypes(){
+        return $this->_types;
+    }
+
+    public function getTypeLabel(){
+        return $this->_types[$this->getType()];
+    }
+
 }
