@@ -12,6 +12,8 @@
  */
 class computer extends Basecomputer
 {
+    const IP_REGEX = '/^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/';
+    const MAC_REGEX = '/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/';
     const TYPE_WINDOWS = 0;
     const TYPE_LINUX = 1;
     const TYPE_WEBSERVER = 2;
