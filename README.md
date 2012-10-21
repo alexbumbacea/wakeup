@@ -3,9 +3,6 @@ wakeup
 
 Wake on lan interface with autodiscovery
 
-It requires
-   * nbtscan to be installed for automatic discovery
-
 Setup new instance:
 
     php symfony configure:database "mysql:host=localhost;dbname=wakeup" userwakeup passwakeup

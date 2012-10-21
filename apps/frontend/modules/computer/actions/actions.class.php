@@ -83,13 +83,15 @@ class computerActions extends sfActions
 
     public function executeWakeup(sfWebRequest $request)
     {
+        /* @var $computer computer */
         $computer = Doctrine_Core::getTable('computer')->find(array($request->getParameter('id')));
-        $server = $request->getPathInfoArray();
-        exec("/usr/bin/wakeonlan " . $computer->getMAC(), $arr);
+
         $log = new log();
         $log->setComputer($computer);
         $log->setUsername($this->getUser()->getUsername());
-        if (strpos($arr[0], 'Sending magic packet') !== false) {
+
+
+        if ($computer->wakeUp()) {
             $this->getUser()->setFlash('info', 'Computer turn on signal was sent. Please wait about 3 minutes before trying to access it!');
         } else {
             $log->setSuccess(false);
