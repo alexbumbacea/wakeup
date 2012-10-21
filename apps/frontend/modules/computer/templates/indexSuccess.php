@@ -21,7 +21,7 @@
         <td><?php echo $computer->getMac() ?></td>
         <td><?php echo button_to('Wake me up!', 'computer/wakeup?id=' . $computer->getId(), array('class' => 'btn btn-primary'))?></td>
         <td>
-            <?php echo button_to('Check remote desktop', 'computer/remote?id=' . $computer->getId(), array('class' => 'btn'))?>
+            <?php echo button_to('Check computer', 'computer/remote?id=' . $computer->getId(), array('class' => 'btn'))?>
             <!-- <?php echo button_to('Check ping', 'computer/ping?id=' . $computer->getId())?> -->
         </td>
     </tr>

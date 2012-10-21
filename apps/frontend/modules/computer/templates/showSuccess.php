@@ -20,7 +20,7 @@
     <tr>
         <td colspan="2">
             <?php echo button_to('Wake me up!', 'computer/wakeup?id=' . $computer->getId(), array('class' => 'btn btn-primary'))?>
-            <?php echo button_to('Check remote desktop', 'computer/remote?id=' . $computer->getId(), array('class' => 'btn'))?>
+            <?php echo button_to('Check computer', 'computer/remote?id=' . $computer->getId(), array('class' => 'btn'))?>
             <?php echo button_to('Edit', 'computer/edit?id=' . $computer->getId(), array('class' => 'btn'))?>
         </td>
     </tr>
