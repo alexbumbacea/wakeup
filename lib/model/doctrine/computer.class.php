@@ -12,8 +12,8 @@
  */
 class computer extends Basecomputer
 {
-    const IP_REGEX = '/^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/';
-    const MAC_REGEX = '/^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/';
+    const IP_REGEX = '(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])';
+    const MAC_REGEX = '([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}';
     const TYPE_WINDOWS = 0;
     const TYPE_LINUX = 1;
     const TYPE_WEBSERVER = 2;
@@ -23,7 +23,7 @@ class computer extends Basecomputer
         0 => 'Windows',
         1 => 'Linux',
         2 => 'Web server',
-        3 => 'Other',
+        //3 => 'Other',
     );
 
     public function verityStatus() {
@@ -40,7 +40,7 @@ class computer extends Basecomputer
     }
 
     protected function verifyByPort($port){
-        $timeout = "10";
+        $timeout = "1";
         return @fsockopen($this->getIp(), $port, $errno, $errstr, $timeout);
     }
     protected function verifyByRdp() {

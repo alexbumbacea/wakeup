@@ -17,13 +17,13 @@ class computerForm extends BasecomputerForm
         ));
 
         $this->validatorSchema['ip'] = new sfValidatorRegex(array(
-            'pattern' => computer::IP_REGEX,
+            'pattern' => "/^{computer::IP_REGEX}$/",
             'required' => true,
         ), array(
             'invalid' => 'Please provide a valid IP address!',
         ));
         $this->validatorSchema['mac'] = new sfValidatorRegex(array(
-            'pattern' => computer::MAC_REGEX,
+            'pattern' => "/^{computer::MAC_REGEX}$/",
             'required' => true,
         ), array(
             'invalid' => 'Please provide a valid MAC address!',
