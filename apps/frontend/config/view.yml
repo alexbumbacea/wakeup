@@ -11,6 +11,7 @@ default:
     #keywords:     symfony, project
     language:     en
     robots:       noindex, nofollow
+    viewport:     width=device-width, initial-scale=1.0
 
   stylesheets:    [jquery.dataTables.css,bootstrap.min.css,bootstrap-responsive.min.css,main.css]
 

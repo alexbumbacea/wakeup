@@ -13,34 +13,45 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="brand" href="<?php echo url_for('@homepage')?>">Power Management</a>
-            <ul class="nav">
-                <li><a href="<?php echo url_for('@homepage');?>">Home</a></li>
-                <?php if ($sf_user->hasCredential('admin')): ?>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="<?php echo url_for('@homepage');?>">Home</a></li>
+                    <?php if ($sf_user->hasCredential('admin')): ?>
                     <li><a href="<?php echo url_for('computer/new');?>">Add computer</a></li>
-                <?php endif; ?>
-                <?php if ($sf_user->isAuthenticated()): ?>
+                    <?php endif; ?>
+                    <?php if ($sf_user->isAuthenticated()): ?>
                     <li><a href="<?php echo url_for('sf_guard_signout');?>">Logout</a></li>
-                <?php endif; ?>
-            </ul>
+                    <?php endif; ?>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <?php if ($sf_user->hasFlash('info')): ?>
-        <div class="span12 alert alert-info"><?php echo $sf_user->getFlash('info') ?></div>
-        <?php endif; ?>
-    </div>
-    <div class="row">
-        <?php if ($sf_user->hasFlash('error')): ?>
-        <div class="span12 alert alert-error"><?php echo $sf_user->getFlash('error') ?></div>
-        <?php endif; ?>
-    </div>
-    <div class="row">
-        <div class="span12">
-            <?php echo $sf_content ?>
+<section>
+    <div class="container">
+        <div class="row">
+            <?php if ($sf_user->hasFlash('info')): ?>
+            <div class="span12 alert alert-info"><?php echo $sf_user->getFlash('info') ?></div>
+            <?php endif; ?>
+        </div>
+        <div class="row">
+            <?php if ($sf_user->hasFlash('error')): ?>
+            <div class="span12 alert alert-error"><?php echo $sf_user->getFlash('error') ?></div>
+            <?php endif; ?>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <?php echo $sf_content ?>
+            </div>
         </div>
     </div>
+</section>
 </body>
 </html>
