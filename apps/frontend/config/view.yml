@@ -13,9 +13,9 @@ default:
     robots:       noindex, nofollow
     viewport:     width=device-width, initial-scale=1.0
 
-  stylesheets:    [jquery.dataTables.css,bootstrap.min.css,main.css,bootstrap-responsive.min.css]
+  stylesheets:    [bootstrap.min.css,main.css,bootstrap-responsive.min.css]
 
-  javascripts:    [jquery.js,jquery.dataTables.min.js,bootstrap.min.js,global.js]
+  javascripts:    [jquery.js,bootstrap.min.js,global.js]
 
   has_layout:     true
   layout:         layout

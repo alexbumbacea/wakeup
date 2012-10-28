@@ -25,10 +25,23 @@
                     <li><a href="<?php echo url_for('@homepage');?>">Home</a></li>
                     <?php if ($sf_user->hasCredential('admin')): ?>
                     <li><a href="<?php echo url_for('computer/new');?>">Add computer</a></li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            User Management
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a href="<?php echo url_for('sfGuardUser/index')?>">Users</a>
+                            <a href="<?php echo url_for('sfGuardGroup/index')?>">Groups</a>
+                        </ul>
+                    </li>
                     <?php endif; ?>
                     <?php if ($sf_user->isAuthenticated()): ?>
                     <li><a href="<?php echo url_for('sf_guard_signout');?>">Logout</a></li>
                     <?php endif; ?>
+
+
                 </ul>
             </div>
         </div>
