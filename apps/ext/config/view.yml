@@ -6,16 +6,15 @@ default:
     content-type: text/html
 
   metas:
-    title:        Wakeup On LAN
+    title:        Wake Up
     #description:  symfony project
     #keywords:     symfony, project
-    language:     en
+    #language:     en
     robots:       noindex, nofollow
-    viewport:     width=device-width, initial-scale=1.0
 
-  stylesheets:    [bootstrap.min.css,main.css,bootstrap-responsive.min.css]
+  stylesheets:    [http://cdn.sencha.com/ext/beta/4.2.0.265/resources/css/ext-all.css,ext.css]
 
-  javascripts:    [jquery.js,bootstrap.min.js,global.js]
+  javascripts:    [http://cdn.sencha.com/ext/beta/4.2.0.265/examples/shared/include-ext.js]
 
   has_layout:     true
   layout:         layout

@@ -3,13 +3,13 @@
 
 prod:
   .settings:
-    no_script_name:         true
+    no_script_name:         false
     logging_enabled:        false
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              true
+    web_debug:              false
     cache:                  false
     no_script_name:         false
     etag:                   false
@@ -24,7 +24,6 @@ test:
 
 all:
   .settings:
-    enabled_modules:      [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission]
     # Form security secret (CSRF protection)
     csrf_secret:            387134218126d4734d8650aafece91d5a7c634fd
 
@@ -34,9 +33,3 @@ all:
 
     # Enable the database manager
     use_database:           true
-
-    login_module:           sfGuardAuth
-    login_action:           signin
-
-    secure_module:          sfGuardAuth
-    secure_action:          secure
