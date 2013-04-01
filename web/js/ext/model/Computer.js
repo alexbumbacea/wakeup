@@ -1,7 +1,9 @@
 Ext.define('wakeup.model.Computer', {
     extend: 'Ext.data.Model',
-    proxy: {
-        type: 'rest',
-        url: 'computer'
-    }
+    fields: [
+        { name: 'name', type: 'string'},
+        { name: 'ip', type: 'string'},
+        { name: 'mac', type: 'string'},
+        { name: 'type', type: 'string'},
+    ]
 });

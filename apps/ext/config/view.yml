@@ -12,9 +12,9 @@ default:
     #language:     en
     robots:       noindex, nofollow
 
-  stylesheets:    [http://cdn.sencha.com/ext/beta/4.2.0.265/resources/css/ext-all.css,ext.css]
+  stylesheets:    [http://cdn.sencha.com/ext/beta/4.2.0.265//resources/css/ext-all.css,ext.css]
 
-  javascripts:    [http://cdn.sencha.com/ext/beta/4.2.0.265/examples/shared/include-ext.js]
+  javascripts:    [http://cdn.sencha.com/ext/beta/4.2.0.265/ext-all-debug.js, ext/App.js]
 
   has_layout:     true
   layout:         layout

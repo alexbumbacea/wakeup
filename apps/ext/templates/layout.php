@@ -2,6 +2,9 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <script type="text/javascript">
+        baseUri = <? echo json_encode(url_for('@homepage')); ?>;
+    </script>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
@@ -9,22 +12,6 @@
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
 
-    <script type="text/javascript">
-        baseUri = <? echo json_encode(url_for('@homepage')); ?>;
-        Ext.Loader.setPath({
-            'Ext.ux.desktop': 'http://cdn.sencha.com/ext/beta/4.2.0.265/examples/desktop/js',
-            'Ext': 'http://cdn.sencha.com/ext/beta/4.2.0.265/src',
-            'MyDesktop': 'http://cdn.sencha.com/ext/beta/4.2.0.265/examples/desktop',
-            'wakeup': 'js/ext'
-        });
-
-        Ext.require('wakeup.App');
-
-        var myDesktopApp;
-        Ext.onReady(function () {
-            myDesktopApp = new wakeup.App();
-        });
-    </script>
 </head>
 <body>
 <?php echo $sf_content ?>

@@ -1,16 +1,17 @@
-Ext.define('wakeup.Form.FormPanel', {
+Ext.define('wakeup.form.FormPanel', {
     extend: 'Ext.form.FormPanel',
     csrfCheck: false,
-    constructor: function (config) {
-        if (config.csrfCheck) {
-            config.items.push(
+    initComponent: function () {
+        var me = this;
+        if (me.csrfCheck) {
+            me.items.push(
                 Ext.create('Ext.form.field.Hidden', {
                     name: '_csrf_token'
                 })
             );
-            config.method = 'GET';
+            me.method = 'GET';
         }
-        wakeup.Form.FormPanel.superclass.constructor.apply(this, arguments);
+        me.callParent(arguments);
     },
     listeners: {
 

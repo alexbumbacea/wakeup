@@ -1,5 +1,6 @@
 Ext.define('wakeup.view.Viewport', {
     extend: 'Ext.Viewport',
+    rederTo: Ext.getBody(),
     items: [{
         xtype: 'panel',
         region: 'north',
@@ -15,7 +16,7 @@ Ext.define('wakeup.view.Viewport', {
         xtype: 'tabpanel',
         region: 'center',
         items: [{
-            title: 'Computers'
+            xtype: 'computerlist'
         }, {
             title: 'Users'
         }]

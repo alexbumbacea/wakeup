@@ -67,5 +67,14 @@ class indexActions extends sfActions
         }
         $this->forward404();
     }
+    public function executeSignout(sfWebRequest $request) {
+        $this->getResponse()->setContentType('application/json');
+        $data = array(
+            'success' => true,
+            'data' => true
+        );
+        $this->getUser()->signOut();
+        return $this->renderText(json_encode($data));
+    }
 
 }
