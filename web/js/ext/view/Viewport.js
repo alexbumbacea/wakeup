@@ -1,6 +1,7 @@
 Ext.define('wakeup.view.Viewport', {
     extend: 'Ext.Viewport',
     rederTo: Ext.getBody(),
+
     items: [{
         xtype: 'panel',
         region: 'north',
