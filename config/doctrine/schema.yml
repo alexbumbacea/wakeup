@@ -5,12 +5,6 @@ computer:
     mac: { type: string(20), unique: true }
     name: { type: string(80), unique: true }
     type: { type: int(2), default: 0 }
-  
-user: 
-  actAs: { Timestampable: ~ }
-  columns: 
-    login: { type: string(80), unique: true }
-    isAdmin: { type: bool, default: 0 }
 log:
   actAs: { Timestampable: ~ }
   columns:
